@@ -2,6 +2,8 @@
 
 var characterChosen = false;
 var defenderSelected = false;
+var currentDefender =false;
+var wincount = 0;
 
 // Stores  user's chosen character
 var character = [];
@@ -14,32 +16,48 @@ var defender = [];
 
 
 // Character Objects
-var darthVader = {
-	hp: 160,
-	ap: 8,
-}
 
-var obiWanKenobi = {
-	hp: 140,
-	ap: 6,
+var characters = {
+	char1:{
+		name: "Darth-Vader",
+		healthPoints: 160,
+		attack: 8,
+		
+	},
+	char22:{
+		name: "Obi-wan",
+		healthPoints: 140,
+		attack: 6,
+		
+	},
+	char3:{
+		name: "Boba-Fett",
+		healthPoints: 120,
+		attack: 5,
+	},
+	char4:{
+		name: "Luke",
+		healthPoints: 100,
+		attack: 7,
+	}
 }
-
-var bobaFett = {
-	hp: 120,
-	ap: 5,	
-}
-
-var lukeSkywalker = {
-	hp: 100,
-	ap: 7,
-}
-
 
 // Main game functions
 $(document).ready( function() {
 
+	// Determines which character has been clicked
 	$("#vaderCharacter").on("click", function () {
-    alert("Darth Vader is selected");
+
+		console.log("Darth Vader is selected")
+    
+
+    	characterChosen = true;
+		character = characters.char1;
+		$("charactersAvailable").hide();
+		
+		
+
+
 
     });
 
